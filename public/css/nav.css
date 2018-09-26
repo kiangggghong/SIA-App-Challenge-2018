@@ -1,0 +1,254 @@
+
+.nav-bar{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  height:58px;
+  z-index: 15;
+  transition: 160ms ease;
+}
+
+.nav-link-wrapper{
+  height:58px;
+}
+
+.nav-bg{
+  position: absolute;
+  background-color: #00266b;
+  top:0px;
+  width: 100%;
+  height:100%;
+  z-index: -5;
+  transition: 100ms linear;
+}
+
+.nav-dummy{
+  height:58px;
+  top:0;
+  width: 100%;
+  z-index: -10;
+}
+
+.nav-home .nav-bg{
+  position: absolute;
+  background-color: transparent;
+  top:-58px;
+  width: 100%;
+  height:100%;
+  z-index: -5;
+  box-shadow: none;
+
+  transition: 100ms linear;
+}
+
+.nav-home .scrolled-bg{
+  background-color: #150e33;
+  top:0;
+}
+
+.nav-welcome-label{
+  display:block;
+  width:100%;
+  font-size:0.8em;
+}
+
+.nav-link-stack > div{
+  border-right: 1px solid white;
+  padding-right:24px;
+  display: flex;
+}
+
+.nav-link-stack > div > a{
+  padding-left:12px;
+  display: flex;
+  font-size:1.6em;
+  color:white;
+}
+
+.nav-welcome-label{
+  font-size:0.6em;
+}
+
+.nav-welcome-name{
+  display:block;
+  width:100%;
+  font-size:0.8em;
+  margin-top:4px;
+  font-weight:700;
+}
+
+.logo{
+  height:36px;
+}
+
+.workato-logo-color{
+  height:24px;
+  position: absolute;
+  z-index:-1;
+}
+
+.nav-link-wrapper ul{
+  color: white;
+  font-size:1em;
+  height:100%;
+
+  -webkit-box-align:center;
+  display: flex;
+  flex:1 1 auto;
+}
+
+.nav-link, .logo-wrapper{
+  display:flex;
+  height: 100%;
+  align-items: center;
+  -webkit-box-align:center;
+  padding: 0 15px;
+  transition: 100ms linear;
+}
+
+.nav-button{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  -webkit-box-align:center;
+}
+
+.nav-home .nav-link-wrapper ul{
+  color: white;
+  font-size:1em;
+  height:100%;
+
+  -webkit-box-align:center;
+  display: flex;
+  flex:1 1 auto;
+}
+
+.nav-hamburg{
+  display:none;
+  float:right;
+  height: 100%;
+  align-items: center;
+  -webkit-box-align:center;
+}
+
+.nav-right .nav-hamburg a{
+  color:#efefef;
+}
+
+.nav-hamburg a{
+  color:#121212;
+}
+
+.nav-link a{
+  color:#dfdfdf;
+  font-size:1em;
+  font-weight:700;
+  transition: 160ms linear;
+}
+
+.nav-link a:hover{
+  color:white;
+}
+
+.side-nav{
+  z-index: 15;
+  position: fixed;
+  right:-300px;
+  background-color: #150e33;
+  height:100%;
+  width: 300px;
+  transition: 160ms ease;
+  padding:56px 0;
+}
+
+.sideNav-welcome{
+  margin:24px 24px 0;
+  padding-bottom:24px;
+  color:#fafafa;
+  border-bottom:1px solid #b9b7ff;
+}
+
+.sideNav-welcome-label{
+  font-size:0.8;
+  margin-bottom:6px;
+}
+
+.sideNav-welcome-name{
+  font-weight:700;
+}
+
+.side-nav ul .sideNav-welcome:hover{
+  background-color: none;
+}
+
+.side-nav ul li{
+  font-size:0.9em;
+  font-weight:700;
+}
+
+.side-nav ul li:hover{
+  background-color: #d3009c;
+  transition: 160ms ease;
+}
+
+.side-nav ul li a{
+  color:#fafafa;
+  height: 100%;
+  width: 100%;
+  padding:24px;
+}
+
+.scrolled-logo{
+  opacity: 0;
+}
+
+.logo-wrapper{
+  display:inline-flex;
+}
+
+.nav-right{
+  float: right;
+}
+
+.nav-left{
+  float:left;
+}
+
+.side-nav-extend{
+  right:0px;
+}
+
+.body-extend{
+  right:300px !important;
+}
+
+.no-scroll{
+  overflow: hidden !important;
+}
+
+
+@media screen and (max-width: 960px) {
+  .nav-hamburg {
+    display:flex;
+    margin-left: auto;
+  }
+
+  .nav-link{
+    display:none;
+  }
+
+  .nav-button{
+    display:none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+
+  .side-nav-extend{
+    right:-300px;
+  }
+
+  .body-extend{
+    right:0px;
+  }
+}

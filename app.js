@@ -22,17 +22,17 @@ const app = express();
 
 //view engine
 app.set('view engine', 'ejs');
-app.set('views',path.join(__dirname, 'templates'));
+app.set('views',path.join(__dirname, 'views'));
 
 // Static
-app.use(express.static('./static'));
+app.use(express.static('./public'));
 
 //body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.use('/api', require('./api_urls'));
-app.use('/', require('./urls'));
+app.use('/', require('./routes'));
 
 app.listen(port, function(){
 	console.log("Listening to port: "+port);

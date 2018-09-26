@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<% include ../partials/header %>
+<body>
+    <% include ../partials/sideNav %>
+</body>
+<div class="page" id="page-login">
+    <% include ../partials/nav %>
+
+    <section class="container-padding login-section">
+        <div class="res-padding">
+            <div id="login-module">
+                <span class="login-description">Staff Login</span>
+                
+                <form class="form" id="login-form" action="/" method="POST">
+                    <input placeholder="Username" name="username">
+                    <span class="form-error"></span>
+                    <input placeholder="Password" name="password" type="password">
+                    <span class="form-error"></span>
+                    <button id="login-submit" class="button large-btn" href="login" type="submit">
+                        Login
+                        <i class="fas fa-sign-in-alt icon-margin-left"></i>
+                    </button>
+                </form>
+                <span class="login-forgetpw">
+                    <a href="forget">Forgot password?</a>
+                </span>
+            </div>
+        </div>
+    </section>
+    <% include ../partials/footer %>
+    <% include ../partials/scripts %>
+</div>
+
+</html>
