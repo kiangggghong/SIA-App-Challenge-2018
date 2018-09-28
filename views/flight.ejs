@@ -1,1 +1,88 @@
-<h1><%= flight.flightId %></h1>
+<!DOCTYPE html>
+<html>
+<% include ../partials/header %>
+
+<body>
+    <% include ../partials/sideNav %>
+    <div class="page">
+        <% include ../partials/nav %>
+
+        <section class="dashboard-padding dashboard-section">
+            <div class="res-padding">
+
+                <div class="flight-toolbar flex-cont">
+                    <div class="flex">
+                        <span class="small-label">Flight Id</span>
+                        <span class="card-title">
+                            <%= flight.flightId %></span>
+                    </div>
+                    <div class="flex">
+                        <span class="small-label">Time Left</span>
+                        <span class="card-title">
+                            <%= flight.timeLeft %></span>
+                    </div>
+                    <div class="flex">
+                        <span class="small-label">Phase</span>
+                        <span class="card-title">
+                            <%= flight.phase %></span>
+                    </div>
+                    <div class="flex ">
+                        <span class="small-label">Status</span>
+                        <% for(var k=0; k < flight.overBookStatus.length; k++) { %>
+                        <span class="status-big status-<%= flight.overBookStatus[k].status %>"><i class="fas fa-user-circle"></i></span>
+                        <% } %>
+                    </div>
+                </div>
+
+                <ul id="item-ul" class="item-ul">
+                    <% for(var i=0; i < flight.passengers.length; i++) { %>
+                    <li class="item-li">
+                        <a href="/passenger?id=<%= flight.passengers[i].passengerId %>">
+                            <div class="trans-left">
+                                <div class="row">
+                                    <div class="flex-cont">
+                                        <div class="flex">
+                                            <span class="small-label">Passenger Id</span>
+                                            <span class="card-title">
+                                                <%= flight.passengers[i].passengerId %></span>
+                                        </div>
+                                        <div class="flex ">
+                                            <span class="small-label">Passenger Name</span>
+                                            <span class="card-title">
+                                                <%= flight.passengers[i].name %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="flex-cont">
+                                        <div class="flex-2 passenger-details">
+                                            <span class="small-info">Ticket Number:
+                                                <%= flight.passengers[i].ticket %></span>
+                                            <span class="small-info">Check in time:
+                                                <%= flight.passengers[i].checkInTime %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trans-right">
+                                <div class="row">
+                                    <span class="small-label">Status</span>
+                                    <span class="card-title status-<%= flight.passengers[i].status %>">
+                                        <%= flight.passengers[i].status %></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <% } %>
+
+                </ul>
+            </div>
+        </section>
+
+        <% include ../partials/footer %>
+        <% include ../partials/scripts %>
+    </div>
+</body>
+
+
+</html>

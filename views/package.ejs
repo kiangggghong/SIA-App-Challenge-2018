@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<% include ../partials/header %>
+
+<body>
+    <% include ../partials/sideNav %>
+    <div class="page">
+        <% include ../partials/nav %>
+
+        <section class="dashboard-padding dashboard-section">
+            <div class="res-padding">
+
+                <div class="flight-toolbar flex-cont">
+                    <div class="flex">
+                        <span class="small-label">Passenger Id</span>
+                        <span class="card-title">
+                            <%= passenger.passengerId %>
+                        </span>
+                    </div>
+                    <div class="flex">
+                        <span class="small-label">Name</span>
+                        <span class="card-title">
+                            <a href="/passenger?id=<%= passenger.passengerId %>">
+                                <%= passenger.name %>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="flex">
+                        <span class="small-label">Ticket Number</span>
+                        <span class="card-title">
+                            <%= passenger.ticketNumber %>
+                        </span>
+                    </div>
+                    <div class="flex ">
+                        <span class="small-label">Status</span>
+                        <span class="card-title status-<%= passenger.status %>">
+                            <%= passenger.status %>
+                        </span>
+                    </div>
+                </div>
+                <div class="flex-cont edit-perks">
+                    <form class="form">
+                            <input value="">
+                            <input value="">
+                            <input value="">
+                    </form>
+                </div>
+                <div class="flex-cont passenger-action">
+                        <% if (passenger.status == "Selected") { %>
+                        <div class="flex">
+                            <button id="passenger-deselect" class="button" href="login" type="submit">
+                                Save Changes
+                                <i class="fas fa-trash-alt icon-margin-left"></i>
+                            </button>
+                        </div>
+                        <% } %>
+    
+                        <div class="flex">
+                            <button id="passenger-custom" class="button" href="login" type="submit">
+                                Accept Package
+                                <i class="fas fa-edit icon-margin-left"></i>
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <% include ../partials/footer %>
+        <% include ../partials/scripts %>
+
+    </div>
+</body>
+
+
+</html>

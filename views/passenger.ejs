@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<% include ../partials/header %>
+
+<body>
+    <% include ../partials/sideNav %>
+    <div class="page">
+        <% include ../partials/nav %>
+
+        <section class="dashboard-padding dashboard-section">
+            <div class="res-padding">
+
+                <div class="flight-toolbar flex-cont">
+                    <div class="flex">
+                        <span class="small-label">Passenger Id</span>
+                        <span class="card-title">
+                            <%= passenger.passengerId %>
+                        </span>
+                    </div>
+                    <div class="flex">
+                        <span class="small-label">Name</span>
+                        <span class="card-title">
+                            <a href="/passenger?id=<%= passenger.passengerId %>">
+                                <%= passenger.name %>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="flex">
+                        <span class="small-label">Ticket Number</span>
+                        <span class="card-title">
+                            <%= passenger.ticketNumber %>
+                        </span>
+                    </div>
+                    <div class="flex ">
+                        <span class="small-label">Status</span>
+                        <span class="card-title status-<%= passenger.status %>">
+                            <%= passenger.status %>
+                        </span>
+                    </div>
+                </div>
+
+                <ul id="item-ul" class="item-ul">
+
+                    <% for(var i=0; i < passenger.packageList.length; i++) { %>
+                    <li class="item-li">
+                        <a href="/package?id=<%= passenger.passengerId %>">
+
+                            <div class="flex package-flex">
+                                <div class="package-img"></div>
+                            </div>
+
+                            <div class="flex package-flex">
+                                <div class="row">
+                                    <span class="small-label">
+                                        <i class="fas fa-gift icon-margin-right"></i>
+                                        Package Title
+                                    </span>
+                                    <span class="card-title">
+                                        <%= passenger.packageList[i].packageTitle %>
+                                    </span>
+                                </div>
+
+                                <div class="package-perks">
+                                    <% for(var k=0; k < passenger.packageList[i].packagePerks.length; k++) { %>
+                                    <span class="perks-info">
+                                        <%= passenger.packageList[i].packagePerks[k] %>
+                                    </span>
+                                    <% } %>
+                                </div>
+                            </div>
+
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+                <div class="flex-cont passenger-action">
+                    <% if (passenger.status == "Selected") { %>
+                    <div class="flex">
+                        <button id="passenger-deselect" class="button" href="" type="submit">
+                            Deselect
+                            <i class="fas fa-trash-alt icon-margin-left"></i>
+                        </button>
+                    </div>
+                    <% } %>
+
+                    <div class="flex">
+                        <button id="passenger-custom" class="button" href="" type="submit">
+                            Custom Package
+                            <i class="fas fa-edit icon-margin-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <% include ../partials/footer %>
+        <% include ../partials/scripts %>
+
+    </div>
+</body>
+
+
+</html>

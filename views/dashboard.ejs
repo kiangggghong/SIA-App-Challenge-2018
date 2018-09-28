@@ -7,34 +7,63 @@
     <div class="page">
         <% include ../partials/nav %>
 
-
         <section class="dashboard-padding dashboard-section">
             <div class="res-padding">
+                <ul id="item-ul" class="item-ul">
 
-                <div class="dashboard-message">
-                    <span id="dashboard-msg-content"></span>
-                </div>
-
-                <div class="res-padding">
-                    <ul id="item-ul" class="item-ul">
-
-                        <% for(var i=0; i < list.length; i++) { %>
-                        <li class="item-li">
+                    <% for(var i=0; i < list.length; i++) { %>
+                    <li class="item-li">
+                        <a href="/flight?id=<%= list[i].flightId %>">
                             <div class="trans-left">
-                                <%= list[i].flightId %>
-                                <%= list[i].timeLeft %>
-                                <%= list[i].departure %>
-                                <%= list[i].destination %>
+                                <div class="row">
+                                    <div class="flex-cont">
+                                        <div class="flex-2 ">
+                                            <span class="small-label">Flight Id</span>
+                                            <span class="card-title">
+                                                <%= list[i].flightId %></span>
+                                        </div>
+                                        <div class="flex flex-center"></div>
+                                        <div class="flex-2">
+                                            <span class="small-label">Time Left</span>
+                                            <span class="card-title">
+                                                <%= list[i].timeLeft %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-flight">
+                                    <div class="flex-cont">
+                                        <div class="flex-2">
+                                            <span class="flight-title">
+                                                <%= list[i].departure %></span>
+                                        </div>
+                                        <div class="flex flex-center">
+                                            <i class="fas fa-plane"></i> </div>
+                                        <div class="flex-2">
+                                            <span class="flight-title">
+                                                <%= list[i].destination %></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="trans-right">
-                                <%= list[i].phase %>
+                                <div class="row">
+                                    <span class="small-label">Phase</span>
+                                    <span class="card-title">
+                                        <%= list[i].phase %></span>
+                                </div>
+                                <div class="row row-flight">
+                                    <div class="flex-2 overbook-status">
+                                        <% for(var k=0; k < list[i].overBookStatus.length; k++) { %>
+                                            <span class="status status-<%= list[i].overBookStatus[k].status %>"><i class="fas fa-user-circle"></i></span>
+                                        <% } %>
+                                    </div>
+                                </div>
                             </div>
-                        </li>
-                        <% } %>
+                        </a>
+                    </li>
+                    <% } %>
 
-                    </ul>
-
-                </div>
+                </ul>
             </div>
         </section>
 
