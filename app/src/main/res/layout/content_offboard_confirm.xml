@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".OffboardConfirmActivity"
+    tools:showIn="@layout/activity_offboard_confirm">
+
+    <include
+        android:id="@+id/layout_user"
+        layout="@layout/layout_user" />
+
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Selected Gift Option"
+        android:textColor="@color/colorPrimary" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/choice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:elevation="3dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/option1_reward3"
+                    android:layout_width="235dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/option1_reward"
+                    android:layout_toEndOf="@+id/imageView2"
+                    android:padding="8dp"
+                    android:text="100£ Meal Vouchers" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    app:srcCompat="@drawable/giftbox" />
+
+
+                <TextView
+                    android:id="@+id/option1_reward"
+                    android:layout_width="251dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView7"
+                    android:layout_below="@+id/textView7"
+                    android:layout_toStartOf="@+id/imageViewCheck1"
+                    android:padding="8dp"
+                    android:text="400£ DFS Voucher" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView2"
+                    android:padding="8dp"
+                    android:text="Kris Gift 1"
+                    android:textColor="@color/colorAccent" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/flight_detail_src"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/layout_user"
+        android:elevation="2dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:elevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/textViewCurrent"
+                    style="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Your New Flight Details"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/textViewFlightNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textViewCurrent"
+                    android:padding="8dp"
+                    android:text="Flight SQ 305" />
+
+                <TextView
+                    android:id="@+id/textViewTerminal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/textViewSrc"
+                    android:layout_toEndOf="@+id/textViewSrc"
+                    android:padding="8dp"
+                    android:text="Terminal"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <TextView
+                    android:id="@+id/textViewSrc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewCurrent"
+                    android:layout_toEndOf="@+id/textViewFlightNo"
+                    android:padding="8dp"
+                    android:paddingStart="0dp"
+                    android:text="London LHR 09:25"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSrcTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textViewSrc"
+                    android:layout_below="@+id/textViewTerminal"
+                    android:padding="8dp"
+                    android:paddingStart="0dp"
+                    android:text="14 Oct Sun" />
+
+                <TextView
+                    android:id="@+id/textViewSrcTerminal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textViewTerminal"
+                    android:layout_below="@+id/textViewTerminal"
+                    android:padding="8dp"
+                    android:text="2" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_user"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_below="@+id/textView3"
+            android:text="Clicking confirm would change your exiting flight timing to the stipulated timing shown above.\nGift content and instructions would be sent to the app shortly." />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:text="Confirm Change of Flight" />
+</LinearLayout>

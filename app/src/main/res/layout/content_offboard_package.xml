@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".OffboardPackageActivity"
+    tools:showIn="@layout/activity_offboard_package">
+
+
+    <include
+        android:id="@+id/layout_user"
+        layout="@layout/layout_user" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/layout_user">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/flight_detail_src"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/layout_user"
+                    android:elevation="2dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:elevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/textViewCurrent"
+                                style="@style/Base.TextAppearance.AppCompat.Headline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="Your Current Flight"
+                                android:textColor="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/textViewFlightNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/textViewCurrent"
+                                android:padding="8dp"
+                                android:text="Flight SQ 305" />
+
+                            <TextView
+                                android:id="@+id/textViewTerminal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/textViewSrc"
+                                android:layout_toEndOf="@+id/textViewSrc"
+                                android:padding="8dp"
+                                android:text="Terminal"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                            <TextView
+                                android:id="@+id/textViewSrc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textViewCurrent"
+                                android:layout_toEndOf="@+id/textViewFlightNo"
+                                android:padding="8dp"
+                                android:paddingStart="0dp"
+                                android:text="London LHR 09:25"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textViewSrcTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@+id/textViewSrc"
+                                android:layout_below="@+id/textViewTerminal"
+                                android:padding="8dp"
+                                android:paddingStart="0dp"
+                                android:text="14 Oct Sun" />
+
+                            <TextView
+                                android:id="@+id/textViewSrcTerminal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@+id/textViewTerminal"
+                                android:layout_below="@+id/textViewTerminal"
+                                android:padding="8dp"
+                                android:text="2" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/flight_detail_src"
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@drawable/ic_airplanemode_active_black_24dp" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/textViewNext"
+                                style="@style/Base.TextAppearance.AppCompat.Headline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:padding="8dp"
+                                android:text="Next Flight"
+                                android:textColor="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/textViewFlightNoNext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/textViewNext"
+                                android:padding="8dp"
+                                android:text="Flight SQ 317" />
+
+                            <TextView
+                                android:id="@+id/textViewTerminalNext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/textViewSrcNext"
+                                android:layout_toEndOf="@+id/textViewSrcNext"
+                                android:padding="8dp"
+                                android:text="Terminal"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                            <TextView
+                                android:id="@+id/textViewSrcNext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textViewNext"
+                                android:layout_toEndOf="@+id/textViewFlightNoNext"
+                                android:padding="8dp"
+                                android:paddingStart="0dp"
+                                android:text="London LHR 11:25"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textViewSrcTimeNext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@+id/textViewSrcNext"
+                                android:layout_below="@+id/textViewTerminalNext"
+                                android:padding="8dp"
+                                android:paddingStart="0dp"
+                                android:text="14 Oct Sun" />
+
+                            <TextView
+                                android:id="@+id/textViewSrcTerminalNext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignStart="@+id/textViewTerminalNext"
+                                android:layout_below="@+id/textViewTerminalNext"
+                                android:padding="8dp"
+                                android:text="2" />
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_below="@+id/flight_detail_src"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_plus_symbol" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/flight_detail_src"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                style="@style/Base.TextAppearance.AppCompat.Headline"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Choose One"
+                                android:textColor="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Have a quality experience shopping and dining at airport. We have the next flight ready for you after you are done" />
+
+                            <TextView
+                                android:id="@+id/textViewSeeMore"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Find out more" />
+
+                            <include layout="@layout/layout_choice"
+                                android:id="@+id/choice"/>
+
+                            <include layout="@layout/layout_choice_2" />
+
+                            <include layout="@layout/layout_choice_3" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/buttonChangeFlight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:background="@android:color/darker_gray"
+                            android:text="I want to change my flight"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+
+</RelativeLayout>

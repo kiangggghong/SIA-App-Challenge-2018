@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SIA</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_offboard">OffboardActivity</string>
+    <string name="title_activity_offboard_package">OffboardPackageActivity</string>
+    <string name="title_activity_offboard_confirm">OffboardConfirmActivity</string>
+</resources>

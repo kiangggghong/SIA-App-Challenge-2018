@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/choice2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="2dp"
+        android:layout_width="wrap_content"
+        android:elevation="3dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/option1_reward3"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/option1_reward"
+                android:layout_toEndOf="@+id/imageView2"
+                android:padding="8dp"
+                android:text="50£ Meal Vouchers" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_marginLeft="8dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/giftbox" />
+
+
+            <TextView
+                android:id="@+id/option1_reward"
+                android:layout_width="251dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textView7"
+                android:layout_below="@+id/textView7"
+                android:layout_toStartOf="@+id/imageViewCheck1"
+                android:padding="8dp"
+                android:text="450£ DFS Voucher" />
+
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/imageView2"
+                android:padding="8dp"
+                android:text="Kris Gift 1"
+                android:textColor="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/imageViewCheck2"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="21dp"
+                android:src="@drawable/ic_checked_grey" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
